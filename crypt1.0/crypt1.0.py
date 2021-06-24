@@ -6,6 +6,24 @@ def start(flag):
 
     def encrypt():
         flag = 1
+
+        #create print_color
+
+        def enter_message():
+            s = message.get()
+            tmp = to_10(s, 36)
+            res = from_10(tmp, 16)
+            print_color(create_color(res))
+
+        def exit():
+            for i in widgets_crypte:
+                i.place_forget()
+            start(flag)
+
+        for i in widgets_main:
+            i.place_forget()
+        widgets_main.clear()
+
         widgets_crypte = []
 
         label_enter = Label(text = "Введите сообщение:", justify=CENTER, font="Verdana 14")
