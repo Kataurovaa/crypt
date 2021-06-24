@@ -1,3 +1,31 @@
+from tkinter import *
+import tkinter as tk
+from tkinter import messagebox
+
+def start():
+    root = Tk()
+    root.resizable(width=False, height=False)
+    field = Canvas(root, width=500, height=500, bg='white')
+    field.pack()
+
+    widgets_main = []
+
+    greeting = Label(text = "Добро пожаловать в шифровальщик.\nВы хотите:", justify=CENTER, font="Verdana 14")
+    greeting.place(x = 100, y = 200)
+    widgets_main.append(greeting)
+
+    button_encrypt = Button(command = encrypt, text = "Зашифровать", width = 20, height = 10)
+    button_encrypt.place(x = 200, y = 300)
+    widgets_main.append(button_encrypt)
+
+    button_decrypt = Button(command = decrypt, text = "Расшифровать", width = 20, height = 10)
+    button_decrypt.place(x = 200, y = 400)
+    widgets_main.append(button_decrypt)
+
+    root.mainloop()
+
+
+
 
 def to_10(inp, osn):
     p = 0
@@ -21,3 +49,5 @@ def from_10(inp, osn):
             digit += str(tmp)
         inp //= osn
     return digit[::-1]
+
+start()
