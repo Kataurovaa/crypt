@@ -2,7 +2,30 @@ from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
 
-def start():
+def start(flag):
+
+    def encrypt():
+        flag = 1
+        widgets_crypte = []
+
+        label_enter = Label(text = "Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ:", justify=CENTER, font="Verdana 14")
+        label_enter.place(x = 100, y = 200)
+        widgets_crypte.append(label_enter)
+
+        message = StringVar()
+        e = Entry(textvariable = message)
+        e.place(x = 100, y = 50)
+        widgets_crypte.append(e)
+
+        button_enter = Button(text = "Р’РІРѕРґ", command = enter_message)
+        button_enter.place(x = 150, y = 50)
+        widgets_crypte.append(button_enter)
+
+        button_exit = Button(text = "Р’РµСЂРЅСѓС‚СЊСЃСЏ РЅР°Р·Р°Рґ", command = exit)
+        button_exit.place(x = 100, y = 300)
+        widgets_crypte.append(button_exit)
+
+
     root = Tk()
     root.resizable(width=False, height=False)
     field = Canvas(root, width=500, height=500, bg='white')
@@ -10,15 +33,15 @@ def start():
 
     widgets_main = []
 
-    greeting = Label(text = "Добро пожаловать в шифровальщик.\nВы хотите:", justify=CENTER, font="Verdana 14")
+    greeting = Label(text = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.\nпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ:", justify=CENTER, font="Verdana 14")
     greeting.place(x = 100, y = 200)
     widgets_main.append(greeting)
 
-    button_encrypt = Button(command = encrypt, text = "Зашифровать", width = 20, height = 10)
+    button_encrypt = Button(command = encrypt, text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", width = 20, height = 10)
     button_encrypt.place(x = 200, y = 300)
     widgets_main.append(button_encrypt)
 
-    button_decrypt = Button(command = decrypt, text = "Расшифровать", width = 20, height = 10)
+    button_decrypt = Button(command = decrypt, text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", width = 20, height = 10)
     button_decrypt.place(x = 200, y = 400)
     widgets_main.append(button_decrypt)
 
@@ -50,4 +73,5 @@ def from_10(inp, osn):
         inp //= osn
     return digit[::-1]
 
-start()
+flag = 0
+start(flag)
