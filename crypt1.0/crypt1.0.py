@@ -2,7 +2,33 @@ from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
 
+
+
 def start():
+    def decrypt():
+        def exit():
+            for i in widgets_crypte:
+                i.place_forget()
+            start(flag)
+
+        for i in widgets_main:
+            i.place_forget()
+        widgets_main.clear()
+
+        flag = 1
+        widgets_crypte = []
+
+        label_greet = Label(text = "Выберите файл с\nзашифрованным сообщением", justify=CENTER, font="Verdana 14")
+        label_greet.place(x = 100, y = 200)
+        widgets_crypte.append(label_greet)
+
+        button_enter = Button(text = "Выбрать", command = open_file)
+        button_enter.place(x = 150, y = 50)
+        widgets_crypte.append(button_enter)
+
+        button_exit = Button(text = "Вернуться назад", command = exit)
+        button_exit.place(x = 100, y = 300)
+        widgets_crypte.append(button_exit)
     root = Tk()
     root.resizable(width=False, height=False)
     field = Canvas(root, width=500, height=500, bg='white')
